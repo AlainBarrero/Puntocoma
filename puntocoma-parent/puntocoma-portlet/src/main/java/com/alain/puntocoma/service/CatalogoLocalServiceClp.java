@@ -44,6 +44,12 @@ public class CatalogoLocalServiceClp implements CatalogoLocalService {
     private String[] _methodParameterTypes16;
     private String _methodName17;
     private String[] _methodParameterTypes17;
+    private String _methodName19;
+    private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
+    private String _methodName21;
+    private String[] _methodParameterTypes21;
 
     public CatalogoLocalServiceClp(InvokableLocalService invokableLocalService) {
         _invokableLocalService = invokableLocalService;
@@ -137,6 +143,20 @@ public class CatalogoLocalServiceClp implements CatalogoLocalService {
         _methodName17 = "setBeanIdentifier";
 
         _methodParameterTypes17 = new String[] { "java.lang.String" };
+
+        _methodName19 = "getAllCatalogos";
+
+        _methodParameterTypes19 = new String[] {  };
+
+        _methodName20 = "createCatalogo";
+
+        _methodParameterTypes20 = new String[] {
+                "java.lang.String", "java.lang.String", "java.lang.String"
+            };
+
+        _methodName21 = "removeCatalogo";
+
+        _methodParameterTypes21 = new String[] { "long" };
     }
 
     @Override
@@ -647,5 +667,107 @@ public class CatalogoLocalServiceClp implements CatalogoLocalService {
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Catalogo> getAllCatalogos()
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName19,
+                    _methodParameterTypes19, new Object[] {  });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.alain.puntocoma.NoSuchCatalogoException) {
+                throw (com.alain.puntocoma.NoSuchCatalogoException) t;
+            }
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List<com.alain.puntocoma.model.Catalogo>) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Catalogo createCatalogo(
+        java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20,
+                    new Object[] {
+                        ClpSerializer.translateInput(title),
+                        
+                    ClpSerializer.translateInput(image),
+                        
+                    ClpSerializer.translateInput(description)
+                    });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.alain.puntocoma.NoSuchCatalogoException) {
+                throw (com.alain.puntocoma.NoSuchCatalogoException) t;
+            }
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (com.alain.puntocoma.model.Catalogo) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Catalogo removeCatalogo(long catalogoId)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName21,
+                    _methodParameterTypes21, new Object[] { catalogoId });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.alain.puntocoma.NoSuchCatalogoException) {
+                throw (com.alain.puntocoma.NoSuchCatalogoException) t;
+            }
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (com.alain.puntocoma.model.Catalogo) ClpSerializer.translateOutput(returnObj);
     }
 }

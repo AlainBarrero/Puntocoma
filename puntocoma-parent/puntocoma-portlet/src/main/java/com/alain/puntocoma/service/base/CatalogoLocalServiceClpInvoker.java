@@ -45,6 +45,12 @@ public class CatalogoLocalServiceClpInvoker {
     private String[] _methodParameterTypes36;
     private String _methodName37;
     private String[] _methodParameterTypes37;
+    private String _methodName42;
+    private String[] _methodParameterTypes42;
+    private String _methodName43;
+    private String[] _methodParameterTypes43;
+    private String _methodName44;
+    private String[] _methodParameterTypes44;
 
     public CatalogoLocalServiceClpInvoker() {
         _methodName0 = "addCatalogo";
@@ -136,6 +142,20 @@ public class CatalogoLocalServiceClpInvoker {
         _methodName37 = "setBeanIdentifier";
 
         _methodParameterTypes37 = new String[] { "java.lang.String" };
+
+        _methodName42 = "getAllCatalogos";
+
+        _methodParameterTypes42 = new String[] {  };
+
+        _methodName43 = "createCatalogo";
+
+        _methodParameterTypes43 = new String[] {
+                "java.lang.String", "java.lang.String", "java.lang.String"
+            };
+
+        _methodName44 = "removeCatalogo";
+
+        _methodParameterTypes44 = new String[] { "long" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
@@ -237,6 +257,22 @@ public class CatalogoLocalServiceClpInvoker {
             CatalogoLocalServiceUtil.setBeanIdentifier((java.lang.String) arguments[0]);
 
             return null;
+        }
+
+        if (_methodName42.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
+            return CatalogoLocalServiceUtil.getAllCatalogos();
+        }
+
+        if (_methodName43.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
+            return CatalogoLocalServiceUtil.createCatalogo((java.lang.String) arguments[0],
+                (java.lang.String) arguments[1], (java.lang.String) arguments[2]);
+        }
+
+        if (_methodName44.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
+            return CatalogoLocalServiceUtil.removeCatalogo(((Long) arguments[0]).longValue());
         }
 
         throw new UnsupportedOperationException();

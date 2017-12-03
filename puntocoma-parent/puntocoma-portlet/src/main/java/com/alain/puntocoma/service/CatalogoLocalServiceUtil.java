@@ -263,6 +263,27 @@ public class CatalogoLocalServiceUtil {
         return getService().invokeMethod(name, parameterTypes, arguments);
     }
 
+    public static java.util.List<com.alain.puntocoma.model.Catalogo> getAllCatalogos()
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().getAllCatalogos();
+    }
+
+    public static com.alain.puntocoma.model.Catalogo createCatalogo(
+        java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().createCatalogo(title, image, description);
+    }
+
+    public static com.alain.puntocoma.model.Catalogo removeCatalogo(
+        long catalogoId)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().removeCatalogo(catalogoId);
+    }
+
     public static void clearService() {
         _service = null;
     }

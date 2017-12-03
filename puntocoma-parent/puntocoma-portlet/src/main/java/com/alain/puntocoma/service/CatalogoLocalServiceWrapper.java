@@ -270,6 +270,29 @@ public class CatalogoLocalServiceWrapper implements CatalogoLocalService,
             arguments);
     }
 
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Catalogo> getAllCatalogos()
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _catalogoLocalService.getAllCatalogos();
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Catalogo createCatalogo(
+        java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _catalogoLocalService.createCatalogo(title, image, description);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Catalogo removeCatalogo(long catalogoId)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _catalogoLocalService.removeCatalogo(catalogoId);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

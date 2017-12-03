@@ -236,4 +236,19 @@ public interface CatalogoLocalService extends BaseLocalService,
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable;
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public java.util.List<com.alain.puntocoma.model.Catalogo> getAllCatalogos()
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    public com.alain.puntocoma.model.Catalogo createCatalogo(
+        java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    public com.alain.puntocoma.model.Catalogo removeCatalogo(long catalogoId)
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.SystemException;
 }

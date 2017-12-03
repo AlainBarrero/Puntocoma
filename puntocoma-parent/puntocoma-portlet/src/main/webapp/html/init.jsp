@@ -15,3 +15,9 @@
 
 <portlet:defineObjects />
 <liferay-theme:defineObjects/>
+
+<%
+
+String paginaPrincpalCatalogo = GetterUtil.getString(portletPreferences.getValue("paginaPrincpalCatalogo", "no"));
+
+%>
