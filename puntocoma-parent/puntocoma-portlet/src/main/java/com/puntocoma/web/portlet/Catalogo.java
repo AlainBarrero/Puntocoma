@@ -28,16 +28,16 @@ public class Catalogo extends MVCPortlet {
 		
 		String paginaPrincpalCatalogo = renderRequest.getPreferences().getValue("paginaPrincpalCatalogo", "no");
 		
-		if (paginaPrincpalCatalogo.equals("si")) {
+		if (paginaPrincpalCatalogo.equals("no")) {
+			
+			include("/html/catalogo/catalogo.jsp", renderRequest, renderResponse);
+			return;
+			
+		} else {
 			
 			super.doView(renderRequest, renderResponse);
 			
-		} else {
-		
-			include("/html/catalogo/catalogo.jsp", renderRequest, renderResponse);
-		
 		}
-		
 	}
 	
 	private boolean blankPreferences(PortletPreferences prefs) {
@@ -46,6 +46,10 @@ public class Catalogo extends MVCPortlet {
 	}
 
 	public void createCatalogo(ActionRequest actioRequest, ActionResponse actionResponse) {
+		
+	}
+	
+	public void removeCatalogo(ActionRequest actionRequest, ActionResponse actionrResponse) {
 		
 	}
 	
