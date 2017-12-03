@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.alain.puntocoma.model.Catalogo">
+		<field name="catalogoId" type="long" />
+		<field name="title" type="String" />
+		<field name="image" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="com.alain.puntocoma.model.Tutorial">
+		<field name="articleId" type="long" />
+		<field name="catalogoId" type="long" />
+		<field name="title" type="String" />
+		<field name="image" type="String" />
+		<field name="description" type="String" />
+	</model>
+</model-hints>

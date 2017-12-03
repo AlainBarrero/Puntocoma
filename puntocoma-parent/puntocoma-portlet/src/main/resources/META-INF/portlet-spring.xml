@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.alain.puntocoma.service.CatalogoLocalService" class="com.alain.puntocoma.service.impl.CatalogoLocalServiceImpl" />
+	<bean id="com.alain.puntocoma.service.persistence.CatalogoPersistence" class="com.alain.puntocoma.service.persistence.CatalogoPersistenceImpl" parent="basePersistence" />
+	<bean id="com.alain.puntocoma.service.TutorialLocalService" class="com.alain.puntocoma.service.impl.TutorialLocalServiceImpl" />
+	<bean id="com.alain.puntocoma.service.persistence.TutorialPersistence" class="com.alain.puntocoma.service.persistence.TutorialPersistenceImpl" parent="basePersistence" />
+</beans>

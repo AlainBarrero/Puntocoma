@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.alain.puntocoma">
+	<author>Alain</author>
+	<namespace>PC</namespace>
+	
+	<entity name="Catalogo" local-service="true" remote-service="false">
+	
+		<!-- PK Fields -->
+		<column name="catalogoId" type="long" primary="true"/>
+		
+		<!-- Audit Fields -->
+		<column name="title" type="String"/>
+		<column name="image" type="String"/>
+		<column name="description" type="String"/>
+		
+		<!-- Order -->
+		<order>
+			<order-column name="title"/>
+		</order>
+		
+		<!-- Finder -->
+		<finder return-type="Collection" name="orderCatalogo">
+			<finder-column name="catalogoId"/>
+		</finder>
+	
+	</entity>
+	
+	<entity name="Tutorial" local-service="true" remote-service="false">
+	
+		<!-- PK Field -->
+		<column name="articleId" type="long" primary="true"/>
+		
+		<!-- Instance -->
+		<column name="catalogoId" type="long"/>
+		
+		<!-- Audit Fields -->
+		<column name="title" type="String"/>
+		<column name="image" type="String"/>
+		<column name="description" type="String"/>
+		
+		<!-- Order -->
+		<order>
+			<order-column name="title"/>
+		</order>
+		
+		<!-- Finder -->
+		<finder return-type="Collection" name="orderTutorial">
+			<finder-column name="articleId"></finder-column>
+		</finder>
+	
+	</entity>
+    
+</service-builder>

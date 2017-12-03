@@ -4,5 +4,7 @@
 <display>
 	<category name="category.sample">
 		<portlet id="puntocoma-portlet" />
+		<portlet id="catalogo"></portlet>
+		<portlet id="tutorial"></portlet>
 	</category>
 </display>
