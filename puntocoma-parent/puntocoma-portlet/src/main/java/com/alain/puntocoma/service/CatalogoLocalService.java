@@ -166,11 +166,13 @@ public interface CatalogoLocalService extends BaseLocalService,
     * @return the catalogo
     * @throws PortalException if a catalogo with the primary key could not be found
     * @throws SystemException if a system exception occurred
+    * @throws com.alain.puntocoma.NoSuchCatalogoException
     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public com.alain.puntocoma.model.Catalogo getCatalogo(long catalogoId)
         throws com.liferay.portal.kernel.exception.PortalException,
-            com.liferay.portal.kernel.exception.SystemException;
+            com.liferay.portal.kernel.exception.SystemException,
+            com.alain.puntocoma.NoSuchCatalogoException;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)

@@ -44,6 +44,14 @@ public class TutorialLocalServiceClp implements TutorialLocalService {
     private String[] _methodParameterTypes16;
     private String _methodName17;
     private String[] _methodParameterTypes17;
+    private String _methodName19;
+    private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
+    private String _methodName21;
+    private String[] _methodParameterTypes21;
+    private String _methodName22;
+    private String[] _methodParameterTypes22;
 
     public TutorialLocalServiceClp(InvokableLocalService invokableLocalService) {
         _invokableLocalService = invokableLocalService;
@@ -137,6 +145,25 @@ public class TutorialLocalServiceClp implements TutorialLocalService {
         _methodName17 = "setBeanIdentifier";
 
         _methodParameterTypes17 = new String[] { "java.lang.String" };
+
+        _methodName19 = "getAllTutoriales";
+
+        _methodParameterTypes19 = new String[] {  };
+
+        _methodName20 = "getTutorialesByCatalogo";
+
+        _methodParameterTypes20 = new String[] { "long" };
+
+        _methodName21 = "createTutorial";
+
+        _methodParameterTypes21 = new String[] {
+                "long", "long", "java.lang.String", "java.lang.String",
+                "java.lang.String"
+            };
+
+        _methodName22 = "removeTutorial";
+
+        _methodParameterTypes22 = new String[] { "long" };
     }
 
     @Override
@@ -647,5 +674,128 @@ public class TutorialLocalServiceClp implements TutorialLocalService {
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getAllTutoriales()
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName19,
+                    _methodParameterTypes19, new Object[] {  });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List<com.alain.puntocoma.model.Tutorial>) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getTutorialesByCatalogo(
+        long catalogoId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20, new Object[] { catalogoId });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List<com.alain.puntocoma.model.Tutorial>) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Tutorial createTutorial(long articleId,
+        long catalogoId, java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName21,
+                    _methodParameterTypes21,
+                    new Object[] {
+                        articleId,
+                        
+                    catalogoId,
+                        
+                    ClpSerializer.translateInput(title),
+                        
+                    ClpSerializer.translateInput(image),
+                        
+                    ClpSerializer.translateInput(description)
+                    });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (com.alain.puntocoma.model.Tutorial) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Tutorial removeTutorial(long articleId)
+        throws com.alain.puntocoma.NoSuchTutorialException,
+            com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName22,
+                    _methodParameterTypes22, new Object[] { articleId });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.alain.puntocoma.NoSuchTutorialException) {
+                throw (com.alain.puntocoma.NoSuchTutorialException) t;
+            }
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (com.alain.puntocoma.model.Tutorial) ClpSerializer.translateOutput(returnObj);
     }
 }

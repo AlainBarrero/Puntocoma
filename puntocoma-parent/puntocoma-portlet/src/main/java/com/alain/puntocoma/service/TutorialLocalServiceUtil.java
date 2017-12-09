@@ -262,6 +262,33 @@ public class TutorialLocalServiceUtil {
         return getService().invokeMethod(name, parameterTypes, arguments);
     }
 
+    public static java.util.List<com.alain.puntocoma.model.Tutorial> getAllTutoriales()
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getAllTutoriales();
+    }
+
+    public static java.util.List<com.alain.puntocoma.model.Tutorial> getTutorialesByCatalogo(
+        long catalogoId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().getTutorialesByCatalogo(catalogoId);
+    }
+
+    public static com.alain.puntocoma.model.Tutorial createTutorial(
+        long articleId, long catalogoId, java.lang.String title,
+        java.lang.String image, java.lang.String description)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService()
+                   .createTutorial(articleId, catalogoId, title, image,
+            description);
+    }
+
+    public static com.alain.puntocoma.model.Tutorial removeTutorial(
+        long articleId)
+        throws com.alain.puntocoma.NoSuchTutorialException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return getService().removeTutorial(articleId);
+    }
+
     public static void clearService() {
         _service = null;
     }

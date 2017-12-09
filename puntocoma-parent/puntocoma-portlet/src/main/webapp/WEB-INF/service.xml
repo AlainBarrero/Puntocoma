@@ -46,7 +46,7 @@
 		
 		<!-- Finder -->
 		<finder return-type="Collection" name="orderTutorial">
-			<finder-column name="articleId"></finder-column>
+			<finder-column name="catalogoId"></finder-column>
 		</finder>
 	
 	</entity>

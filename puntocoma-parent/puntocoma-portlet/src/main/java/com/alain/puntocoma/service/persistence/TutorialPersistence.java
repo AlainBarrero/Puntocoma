@@ -24,41 +24,41 @@ public interface TutorialPersistence extends BasePersistence<Tutorial> {
      */
 
     /**
-    * Returns all the tutorials where articleId = &#63;.
+    * Returns all the tutorials where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @return the matching tutorials
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<com.alain.puntocoma.model.Tutorial> findByorderTutorial(
-        long articleId)
+        long catalogoId)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns a range of all the tutorials where articleId = &#63;.
+    * Returns a range of all the tutorials where catalogoId = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.alain.puntocoma.model.impl.TutorialModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param start the lower bound of the range of tutorials
     * @param end the upper bound of the range of tutorials (not inclusive)
     * @return the range of matching tutorials
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<com.alain.puntocoma.model.Tutorial> findByorderTutorial(
-        long articleId, int start, int end)
+        long catalogoId, int start, int end)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns an ordered range of all the tutorials where articleId = &#63;.
+    * Returns an ordered range of all the tutorials where catalogoId = &#63;.
     *
     * <p>
     * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.alain.puntocoma.model.impl.TutorialModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
     * </p>
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param start the lower bound of the range of tutorials
     * @param end the upper bound of the range of tutorials (not inclusive)
     * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
@@ -66,83 +66,99 @@ public interface TutorialPersistence extends BasePersistence<Tutorial> {
     * @throws SystemException if a system exception occurred
     */
     public java.util.List<com.alain.puntocoma.model.Tutorial> findByorderTutorial(
-        long articleId, int start, int end,
+        long catalogoId, int start, int end,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the first tutorial in the ordered set where articleId = &#63;.
+    * Returns the first tutorial in the ordered set where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching tutorial
     * @throws com.alain.puntocoma.NoSuchTutorialException if a matching tutorial could not be found
     * @throws SystemException if a system exception occurred
     */
     public com.alain.puntocoma.model.Tutorial findByorderTutorial_First(
-        long articleId,
+        long catalogoId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.alain.puntocoma.NoSuchTutorialException,
             com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the first tutorial in the ordered set where articleId = &#63;.
+    * Returns the first tutorial in the ordered set where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the first matching tutorial, or <code>null</code> if a matching tutorial could not be found
     * @throws SystemException if a system exception occurred
     */
     public com.alain.puntocoma.model.Tutorial fetchByorderTutorial_First(
-        long articleId,
+        long catalogoId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the last tutorial in the ordered set where articleId = &#63;.
+    * Returns the last tutorial in the ordered set where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching tutorial
     * @throws com.alain.puntocoma.NoSuchTutorialException if a matching tutorial could not be found
     * @throws SystemException if a system exception occurred
     */
     public com.alain.puntocoma.model.Tutorial findByorderTutorial_Last(
-        long articleId,
+        long catalogoId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.alain.puntocoma.NoSuchTutorialException,
             com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the last tutorial in the ordered set where articleId = &#63;.
+    * Returns the last tutorial in the ordered set where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
     * @return the last matching tutorial, or <code>null</code> if a matching tutorial could not be found
     * @throws SystemException if a system exception occurred
     */
     public com.alain.puntocoma.model.Tutorial fetchByorderTutorial_Last(
-        long articleId,
+        long catalogoId,
         com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Removes all the tutorials where articleId = &#63; from the database.
+    * Returns the tutorials before and after the current tutorial in the ordered set where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param articleId the primary key of the current tutorial
+    * @param catalogoId the catalogo ID
+    * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+    * @return the previous, current, and next tutorial
+    * @throws com.alain.puntocoma.NoSuchTutorialException if a tutorial with the primary key could not be found
     * @throws SystemException if a system exception occurred
     */
-    public void removeByorderTutorial(long articleId)
+    public com.alain.puntocoma.model.Tutorial[] findByorderTutorial_PrevAndNext(
+        long articleId, long catalogoId,
+        com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+        throws com.alain.puntocoma.NoSuchTutorialException,
+            com.liferay.portal.kernel.exception.SystemException;
+
+    /**
+    * Removes all the tutorials where catalogoId = &#63; from the database.
+    *
+    * @param catalogoId the catalogo ID
+    * @throws SystemException if a system exception occurred
+    */
+    public void removeByorderTutorial(long catalogoId)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**
-    * Returns the number of tutorials where articleId = &#63;.
+    * Returns the number of tutorials where catalogoId = &#63;.
     *
-    * @param articleId the article ID
+    * @param catalogoId the catalogo ID
     * @return the number of matching tutorials
     * @throws SystemException if a system exception occurred
     */
-    public int countByorderTutorial(long articleId)
+    public int countByorderTutorial(long catalogoId)
         throws com.liferay.portal.kernel.exception.SystemException;
 
     /**

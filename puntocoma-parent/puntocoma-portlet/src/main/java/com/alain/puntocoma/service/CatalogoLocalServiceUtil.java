@@ -182,10 +182,12 @@ public class CatalogoLocalServiceUtil {
     * @return the catalogo
     * @throws PortalException if a catalogo with the primary key could not be found
     * @throws SystemException if a system exception occurred
+    * @throws com.alain.puntocoma.NoSuchCatalogoException
     */
     public static com.alain.puntocoma.model.Catalogo getCatalogo(
         long catalogoId)
-        throws com.liferay.portal.kernel.exception.PortalException,
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         return getService().getCatalogo(catalogoId);
     }

@@ -270,6 +270,35 @@ public class TutorialLocalServiceWrapper implements TutorialLocalService,
             arguments);
     }
 
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getAllTutoriales()
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _tutorialLocalService.getAllTutoriales();
+    }
+
+    @Override
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getTutorialesByCatalogo(
+        long catalogoId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _tutorialLocalService.getTutorialesByCatalogo(catalogoId);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Tutorial createTutorial(long articleId,
+        long catalogoId, java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _tutorialLocalService.createTutorial(articleId, catalogoId,
+            title, image, description);
+    }
+
+    @Override
+    public com.alain.puntocoma.model.Tutorial removeTutorial(long articleId)
+        throws com.alain.puntocoma.NoSuchTutorialException,
+            com.liferay.portal.kernel.exception.SystemException {
+        return _tutorialLocalService.removeTutorial(articleId);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

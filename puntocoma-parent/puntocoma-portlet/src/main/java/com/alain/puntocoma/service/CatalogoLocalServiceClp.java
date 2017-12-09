@@ -480,7 +480,8 @@ public class CatalogoLocalServiceClp implements CatalogoLocalService {
 
     @Override
     public com.alain.puntocoma.model.Catalogo getCatalogo(long catalogoId)
-        throws com.liferay.portal.kernel.exception.PortalException,
+        throws com.alain.puntocoma.NoSuchCatalogoException,
+            com.liferay.portal.kernel.exception.PortalException,
             com.liferay.portal.kernel.exception.SystemException {
         Object returnObj = null;
 
@@ -489,6 +490,10 @@ public class CatalogoLocalServiceClp implements CatalogoLocalService {
                     _methodParameterTypes11, new Object[] { catalogoId });
         } catch (Throwable t) {
             t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.alain.puntocoma.NoSuchCatalogoException) {
+                throw (com.alain.puntocoma.NoSuchCatalogoException) t;
+            }
 
             if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
                 throw (com.liferay.portal.kernel.exception.PortalException) t;

@@ -228,10 +228,12 @@ public abstract class CatalogoLocalServiceBaseImpl extends BaseLocalServiceImpl
      * @return the catalogo
      * @throws PortalException if a catalogo with the primary key could not be found
      * @throws SystemException if a system exception occurred
+     * @throws com.alain.puntocoma.NoSuchCatalogoException
      */
     @Override
     public Catalogo getCatalogo(long catalogoId)
-        throws PortalException, SystemException {
+        throws PortalException, SystemException,
+            com.alain.puntocoma.NoSuchCatalogoException {
         return catalogoPersistence.findByPrimaryKey(catalogoId);
     }
 

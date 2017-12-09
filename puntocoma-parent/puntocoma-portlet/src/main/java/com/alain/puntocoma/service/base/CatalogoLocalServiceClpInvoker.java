@@ -47,10 +47,10 @@ public class CatalogoLocalServiceClpInvoker {
     private String[] _methodParameterTypes37;
     private String _methodName42;
     private String[] _methodParameterTypes42;
-    private String _methodName43;
-    private String[] _methodParameterTypes43;
     private String _methodName44;
     private String[] _methodParameterTypes44;
+    private String _methodName45;
+    private String[] _methodParameterTypes45;
 
     public CatalogoLocalServiceClpInvoker() {
         _methodName0 = "addCatalogo";
@@ -147,15 +147,15 @@ public class CatalogoLocalServiceClpInvoker {
 
         _methodParameterTypes42 = new String[] {  };
 
-        _methodName43 = "createCatalogo";
+        _methodName44 = "createCatalogo";
 
-        _methodParameterTypes43 = new String[] {
+        _methodParameterTypes44 = new String[] {
                 "java.lang.String", "java.lang.String", "java.lang.String"
             };
 
-        _methodName44 = "removeCatalogo";
+        _methodName45 = "removeCatalogo";
 
-        _methodParameterTypes44 = new String[] { "long" };
+        _methodParameterTypes45 = new String[] { "long" };
     }
 
     public Object invokeMethod(String name, String[] parameterTypes,
@@ -264,14 +264,14 @@ public class CatalogoLocalServiceClpInvoker {
             return CatalogoLocalServiceUtil.getAllCatalogos();
         }
 
-        if (_methodName43.equals(name) &&
-                Arrays.deepEquals(_methodParameterTypes43, parameterTypes)) {
+        if (_methodName44.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
             return CatalogoLocalServiceUtil.createCatalogo((java.lang.String) arguments[0],
                 (java.lang.String) arguments[1], (java.lang.String) arguments[2]);
         }
 
-        if (_methodName44.equals(name) &&
-                Arrays.deepEquals(_methodParameterTypes44, parameterTypes)) {
+        if (_methodName45.equals(name) &&
+                Arrays.deepEquals(_methodParameterTypes45, parameterTypes)) {
             return CatalogoLocalServiceUtil.removeCatalogo(((Long) arguments[0]).longValue());
         }
 

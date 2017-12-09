@@ -33,6 +33,11 @@ public class CatalogoLocalServiceImpl extends CatalogoLocalServiceBaseImpl {
 		return catalogoPersistence.findAll();
 	}
 	
+	@Override 
+	public Catalogo getCatalogo(long catalogoId) throws NoSuchCatalogoException, SystemException {
+		return catalogoPersistence.findByPrimaryKey(catalogoId);
+	}
+	
 	@Override
 	public Catalogo createCatalogo(String title, String image, String description) throws NoSuchCatalogoException, SystemException {
 		

@@ -236,4 +236,22 @@ public interface TutorialLocalService extends BaseLocalService,
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable;
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getAllTutoriales()
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public java.util.List<com.alain.puntocoma.model.Tutorial> getTutorialesByCatalogo(
+        long catalogoId)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    public com.alain.puntocoma.model.Tutorial createTutorial(long articleId,
+        long catalogoId, java.lang.String title, java.lang.String image,
+        java.lang.String description)
+        throws com.liferay.portal.kernel.exception.SystemException;
+
+    public com.alain.puntocoma.model.Tutorial removeTutorial(long articleId)
+        throws com.alain.puntocoma.NoSuchTutorialException,
+            com.liferay.portal.kernel.exception.SystemException;
 }

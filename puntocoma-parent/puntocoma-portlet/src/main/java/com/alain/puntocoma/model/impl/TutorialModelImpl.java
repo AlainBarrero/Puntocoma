@@ -66,7 +66,7 @@ public class TutorialModelImpl extends BaseModelImpl<Tutorial>
     public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
                 "value.object.column.bitmask.enabled.com.alain.puntocoma.model.Tutorial"),
             true);
-    public static long ARTICLEID_COLUMN_BITMASK = 1L;
+    public static long CATALOGOID_COLUMN_BITMASK = 1L;
     public static long TITLE_COLUMN_BITMASK = 2L;
     public static final long LOCK_EXPIRATION_TIME = GetterUtil.getLong(com.liferay.util.service.ServiceProps.get(
                 "lock.expiration.time.com.alain.puntocoma.model.Tutorial"));
@@ -75,9 +75,9 @@ public class TutorialModelImpl extends BaseModelImpl<Tutorial>
             Tutorial.class
         };
     private long _articleId;
-    private long _originalArticleId;
-    private boolean _setOriginalArticleId;
     private long _catalogoId;
+    private long _originalCatalogoId;
+    private boolean _setOriginalCatalogoId;
     private String _title;
     private String _image;
     private String _description;
@@ -170,19 +170,7 @@ public class TutorialModelImpl extends BaseModelImpl<Tutorial>
 
     @Override
     public void setArticleId(long articleId) {
-        _columnBitmask |= ARTICLEID_COLUMN_BITMASK;
-
-        if (!_setOriginalArticleId) {
-            _setOriginalArticleId = true;
-
-            _originalArticleId = _articleId;
-        }
-
         _articleId = articleId;
-    }
-
-    public long getOriginalArticleId() {
-        return _originalArticleId;
     }
 
     @Override
@@ -192,7 +180,19 @@ public class TutorialModelImpl extends BaseModelImpl<Tutorial>
 
     @Override
     public void setCatalogoId(long catalogoId) {
+        _columnBitmask |= CATALOGOID_COLUMN_BITMASK;
+
+        if (!_setOriginalCatalogoId) {
+            _setOriginalCatalogoId = true;
+
+            _originalCatalogoId = _catalogoId;
+        }
+
         _catalogoId = catalogoId;
+    }
+
+    public long getOriginalCatalogoId() {
+        return _originalCatalogoId;
     }
 
     @Override
@@ -324,9 +324,9 @@ public class TutorialModelImpl extends BaseModelImpl<Tutorial>
     public void resetOriginalValues() {
         TutorialModelImpl tutorialModelImpl = this;
 
-        tutorialModelImpl._originalArticleId = tutorialModelImpl._articleId;
+        tutorialModelImpl._originalCatalogoId = tutorialModelImpl._catalogoId;
 
-        tutorialModelImpl._setOriginalArticleId = false;
+        tutorialModelImpl._setOriginalCatalogoId = false;
 
         tutorialModelImpl._columnBitmask = 0;
     }
